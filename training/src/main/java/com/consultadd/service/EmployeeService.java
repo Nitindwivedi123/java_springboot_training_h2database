@@ -3,6 +3,7 @@ package com.consultadd.service;
 import com.consultadd.model.Employee;
 import com.consultadd.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -43,6 +44,11 @@ public class EmployeeService {
         }else{
             return "Employee does not exist.";
         }
+    }
+
+    public List<Employee> findcity(String city){
+        return employeerepository.findAllByCity(city);
+
     }
 
 }
